@@ -1,0 +1,73 @@
+<h1>Empleado <small></small></h1>
+<hr />
+
+<div clas="row text-right">
+  <div class="col">
+    <button class="btn btn-danger" routerLink="/empleados">
+      <i class="fa fa-arrow-left"></i>
+      Regresar
+    </button>
+  </div>
+</div>
+
+
+<div class="row animated fadeIn faster">
+  <div class="col">
+
+    <!-- Al formulario se le declara el ngSubmit para guardar la referencia del formulario
+    -->
+
+    <form (ngSubmit)="guardar( f )"
+      #f="ngForm">
+
+      <!-- definir primer campo -->
+   <div class="form-gruop">
+     <label></label>
+      <input type="text"
+              class="form-control"
+              placeholder="Firebase ID"
+              [(ngModel)]="empleado.id"
+              name="id"
+              disabled="disabled">
+      <small class="form-text text-muted">Este es un campo de autogenerado</small>
+    </div>
+
+    <div class="form-gruop">
+      <label>Nombre</label>
+      <input type="text"
+      class="form-control"
+      placeholder="Nombre del empleado"
+      [(ngModel)]="empleado.name"
+      name="nombre"
+      requiered>
+    </div>
+
+    <div class="form-gruop">
+      <label>Apellido</label>
+      <input type="text"
+      class="form-control"
+      [(ngModel)]="empleado.last_name"
+      name="poder"
+      placeholder="apellido del empleado">
+    </div>
+
+    <div class="form-gruop">
+      <label>Fecha de Nacimiento</label>
+      <input type="text"
+      class="form-control"
+      [(ngModel)]="empleado.birthday"
+      name="poder"
+      placeholder="Fecha de Nacimiento">
+    </div>
+
+
+    <hr>
+    <div class="form-grup text-center">
+      <button type="submit"
+              class="btn btn-primary w-25">
+              <i class="fa fa-save"></i>
+              Guardar
+      </button>
+    </div>
+
+    </form>
